@@ -1,0 +1,19 @@
+# 项目架构与技术栈分析
+1. 文件夹结构
+src/app/：Next.js App Router 结构，包含页面、布局、API 路由等
+(home)/：首页或主页面
+docs/：文档页面
+api/：自定义 API 路由
+src/lib/：通常用于工具函数或自定义 hooks
+content/docs/：文档内容（如mdx文件）
+node_modules/、package.json、tsconfig.json等：常规Node.js项目结构
+2. 技术栈
+Next.js 15：主流 React 服务端渲染框架
+React 19：前端 UI 框架
+TypeScript：类型安全
+Tailwind CSS 4：原子化 CSS 框架，快速美化页面
+fumadocs-ui / fumadocs-core / fumadocs-mdx：文档站点相关 UI 组件和功能
+PostCSS：CSS 处理工具
+ESLint：代码规范
+3. 样式体系
+src/app/global.css 已引入 Tailwind CSS 和 fumadocs-ui 的样式
