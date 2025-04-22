@@ -1,25 +1,55 @@
 // Remove the line below as it's unused and causing the error:
 // import { RootLayout } from 'fumadocs-ui/layout'; 
 import Link from 'next/link';
+import { source } from '@/lib/source'; // 导入文档源
+import { Card, Cards } from 'fumadocs-ui/components/card'; // 导入卡片组件
 
 export default function HomePage() {
+  // 获取所有文档页面，并假设它们按某种期望的顺序排列
+  // 这里我们取前3篇作为“最新”文章示例。您可以根据需要调整数量或排序逻辑
+  const latestArticles = source.files
+    .filter((file) => file.type === 'page' && file.data?.exports?.frontmatter?.title) // 确保是页面且有标题
+    .slice(0, 3); // 获取前3篇文章作为示例
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
-      <div className="max-w-4xl">
+      <div className="max-w-4xl w-full">
         <h1 className="text-6xl font-bold tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           探索、学习、创造
         </h1>
         <p className="text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-12">
-          欢迎来到您的知识库。在这里，您可以找到详细的文档、指南和技术洞见。
+          欢迎来到您的知识库。从最新的文章开始探索。
         </p>
-        <div className="flex justify-center gap-4">
-          <Link 
-            href="/docs" 
+
+        {/* 最新文章区域 */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-6 text-gray-800 dark:text-gray-200">最新文章</h2>
+          {latestArticles.length > 0 ? (
+            <Cards>
+              {latestArticles.map((article) => (
+                <Card
+                  key={article.url}
+                  title={article.data.exports.frontmatter.title}
+                  description={article.data.exports.frontmatter.description ?? '点击阅读更多...'} // 使用描述或默认文本
+                  href={article.url} // 文章链接
+                />
+              ))}
+            </Cards>
+          ) : (
+            <p className="text-gray-500 dark:text-gray-400">暂无文章。</p>
+          )}
+        </div>
+
+        {/* 保留原有的“开始探索”按钮 */}
+        <div className="flex justify-center gap-4 mb-16">
+          <Link
+            href="/docs"
             className="px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
           >
-            开始探索文档
+            查看所有文档
           </Link>
         </div>
+
         <p className="mt-20 text-sm text-gray-500 dark:text-gray-400">
           构建未来 · 知识驱动 · {new Date().getFullYear()}
         </p>
