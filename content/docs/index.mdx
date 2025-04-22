@@ -1,13 +1,35 @@
 ---
-title: Hello World
-description: Your first document
+title: 欢迎
+description: 简约而不简单的技术文档
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
-
-## What is Next?
-
-<Cards>
-  <Card title="大纲结构与字数占比" href="/docs/1st" />
-  <Card title="项目架构与技术栈" href="/docs/tech-structure" />
-</Cards>
+<div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
+  <h1 className="text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+    简约而不简单
+  </h1>
+  
+  <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-10">
+    探索技术的本质，专注于内容与体验的完美结合
+  </p>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+    <a href="/docs/tech-structure" className="group p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800">
+      <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">技术架构</h3>
+      <p className="text-gray-500 dark:text-gray-400 text-sm">深入了解系统的技术结构与设计理念</p>
+    </a>
+    
+    <a href="/docs/1st" className="group p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800">
+      <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">入门指南</h3>
+      <p className="text-gray-500 dark:text-gray-400 text-sm">快速上手，轻松掌握核心功能</p>
+    </a>
+    
+    <a href="/docs/test" className="group p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800">
+      <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">测试文档</h3>
+      <p className="text-gray-500 dark:text-gray-400 text-sm">测试与质量保证的最佳实践</p>
+    </a>
+  </div>
+  
+  <div className="mt-16 text-sm text-gray-500 dark:text-gray-400">
+    <p>精心设计 · 专注体验 · {new Date().getFullYear()}</p>
+  </div>
+</div>
