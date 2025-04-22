@@ -1,4 +1,4 @@
-// Remove the line below as it's unused and causing the error:
+// Ensure this line is removed if it still exists:
 // import { RootLayout } from 'fumadocs-ui/layout'; 
 import Link from 'next/link';
 import { source } from '@/lib/source'; // 导入文档源
