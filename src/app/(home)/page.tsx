@@ -1,4 +1,5 @@
-import { RootLayout } from 'fumadocs-ui/layout';
+// Remove the line below as it's unused and causing the error:
+// import { RootLayout } from 'fumadocs-ui/layout'; 
 import Link from 'next/link';
 
 export default function HomePage() {
