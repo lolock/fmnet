@@ -1,15 +1,15 @@
 // Make sure this line is completely removed:
 // import { RootLayout } from 'fumadocs-ui/layout'; 
 import Link from 'next/link';
-import { source } from '@/lib/source'; 
+import { source } from '@/lib/source'; // 导入 source 对象
 import { Card, Cards } from 'fumadocs-ui/components/card'; 
+import type { Page } from 'fumadocs-core/source'; // 导入 Page 类型
 
 export default function HomePage() {
-  // 获取所有文档页面，并假设它们按某种期望的顺序排列
-  // 这里我们取前3篇作为“最新”文章示例。您可以根据需要调整数量或排序逻辑
-  const latestArticles = source.files
-    .filter((file) => file.type === 'page' && file.data?.exports?.frontmatter?.title) 
-    .slice(0, 3); 
+  // 使用 source.getPages() 获取所有文档页面
+  const latestArticles = source.getPages() // 调用 source 对象的 getPages 方法
+    .filter((file: Page) => file.data?.title) // 直接访问 file.data.title
+    .slice(0, 3); // 获取前3篇文章作为示例
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
@@ -26,11 +26,11 @@ export default function HomePage() {
           <h2 className="text-3xl font-semibold mb-6 text-gray-800 dark:text-gray-200">最新文章</h2>
           {latestArticles.length > 0 ? (
             <Cards>
-              {latestArticles.map((article) => (
+              {latestArticles.map((article: Page) => ( // 添加 Page 类型注解
                 <Card
                   key={article.url}
-                  title={article.data.exports.frontmatter.title}
-                  description={article.data.exports.frontmatter.description ?? '点击阅读更多...'} // 使用描述或默认文本
+                  title={article.data.title} // 直接访问 article.data.title
+                  description={article.data.description ?? '点击阅读更多...'} // 直接访问 article.data.description
                   href={article.url} // 文章链接
                 />
               ))}
