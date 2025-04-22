@@ -1,15 +1,15 @@
-// Ensure this line is removed if it still exists:
+// Make sure this line is completely removed:
 // import { RootLayout } from 'fumadocs-ui/layout'; 
 import Link from 'next/link';
-import { source } from '@/lib/source'; // 导入文档源
-import { Card, Cards } from 'fumadocs-ui/components/card'; // 导入卡片组件
+import { source } from '@/lib/source'; 
+import { Card, Cards } from 'fumadocs-ui/components/card'; 
 
 export default function HomePage() {
   // 获取所有文档页面，并假设它们按某种期望的顺序排列
   // 这里我们取前3篇作为“最新”文章示例。您可以根据需要调整数量或排序逻辑
   const latestArticles = source.files
-    .filter((file) => file.type === 'page' && file.data?.exports?.frontmatter?.title) // 确保是页面且有标题
-    .slice(0, 3); // 获取前3篇文章作为示例
+    .filter((file) => file.type === 'page' && file.data?.exports?.frontmatter?.title) 
+    .slice(0, 3); 
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
