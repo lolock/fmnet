@@ -1,0 +1,254 @@
+---
+title: 紫金矿业 2023 年度报告亮点 | Zijin Mining 2023 Highlights
+description: 紫金矿业 2023 年度报告的关键亮点，包括财务业绩、产量数据、资源概览、ESG 指标和全球业务布局。
+lang: zh-CN
+# 注意：此 MDX 文件依赖于外部设置：
+# 1. Tailwind CSS：需要正确配置 Tailwind。
+# 2. Framer Motion：需要安装 `framer-motion` 库。
+# 3. React Icons：需要安装 `react-icons` 库（用于 FontAwesome 图标）。
+# 4. 自定义 CSS：需要定义 HTML 中存在的自定义样式（例如 `--tesla-red` 变量、`highlight-number`、`opacity-gradient`、`icon-large`、`grid-item` 样式等）。
+# 5. Google Fonts：需要加载 'Inter' 字体。
+---
+
+import { motion } from 'framer-motion';
+// 假设使用 react-icons 替换 FontAwesome
+import { FaQuoteLeft, FaChartLine, FaSackDollar, FaCube, FaCoins, FaLeaf, FaRecycle, FaGlobe, FaAtom } from 'react-icons/fa6';
+
+{/* 
+  全局样式说明 (需要在全局 CSS 或 Layout 组件中定义):
+  :root { --tesla-red: #E31937; --tesla-red-rgb: 227, 25, 55; }
+  body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+  .text-tesla-red { color: var(--tesla-red); }
+  .bg-tesla-red { background-color: var(--tesla-red); }
+  .border-tesla-red { border-color: var(--tesla-red); }
+  .highlight-number { font-size: 4rem; font-weight: 900; line-height: 1; color: var(--tesla-red); }
+  @media (min-width: 768px) { .highlight-number { font-size: 6rem; } }
+  .opacity-gradient { background: linear-gradient(to bottom, rgba(var(--tesla-red-rgb), 0.75), rgba(var(--tesla-red-rgb), 0.25)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .highlight-number.opacity-gradient { background: linear-gradient(to bottom, rgba(var(--tesla-red-rgb), 1), rgba(var(--tesla-red-rgb), 0.5)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .grid-item { border-radius: 0.75rem; background-color: rgba(255, 255, 255, 0.05); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; }
+  .grid-item:hover { transform: scale(1.02); transition: transform 0.3s ease-in-out; background-color: rgba(255, 255, 255, 0.08); }
+  .icon-large { font-size: 3rem; opacity: 0.5; position: absolute; bottom: 1rem; right: 1rem; }
+  svg { max-width: 100%; height: auto; }
+*/}
+
+<div className="container mx-auto px-4 py-8">
+    <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-12"
+    >
+        <h1 className="text-4xl md:text-6xl font-bold mb-2">
+            紫金矿业 <span className="text-tesla-red">2023</span> 年度报告
+        </h1>
+        <p className="text-lg md:text-xl text-gray-400">
+            Zijin Mining 2023 Annual Report Highlights
+        </p>
+    </motion.div>
+
+    {/* Bento Grid - 使用 Tailwind Grid */}
+    {/* 注意: 响应式网格布局 (md:grid-cols-4) 和自定义行高 (grid-auto-rows) 需要 Tailwind 配置 */}
+    <div className="grid gap-4 grid-cols-1 md:grid-cols-4 md:auto-rows-[minmax(150px,_auto)] p-4 md:p-8">
+
+        {/* 董事长致辞 */}
+        <motion.div
+            className="grid-item md:col-span-2 md:row-span-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+        >
+            <div>
+                <h2 className="text-2xl font-bold mb-4">董事长致辞 <span className="text-sm text-gray-400 block">Chairman's Statement</span></h2>
+                <p className="text-gray-300 mb-4 text-sm md:text-base">
+                    2023年是紫金矿业三十周年，公司逆势增长，实现新十年第二阶段“开门红”。铜、金产量持续增长，归母净利润达<strong className="text-tesla-red font-bold">211亿元</strong>，经营性现金流<strong className="text-tesla-red font-bold">369亿元</strong>。ESG评级全面提升。公司聚焦能源转型关键矿产，世界级铜、锂资产增产增效，黄金产量持续增长。坚持绿色低碳，全球社会贡献显著。面对挑战，我们将坚持创新，提升全球竞争力，为人类美好生活贡献更多低碳绿色矿物原料。
+                </p>
+                <p className="text-gray-400 text-xs">SUMMARY</p>
+            </div>
+            <FaQuoteLeft className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 营业收入 */}
+        <motion.div
+            className="grid-item md:col-span-1"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+        >
+            <h3 className="text-lg font-semibold mb-2">营业收入 <span className="text-xs text-gray-400 block">Revenue</span></h3>
+            {/* highlight-number 和 opacity-gradient 需要自定义 CSS */}
+            <p className="highlight-number opacity-gradient">2,934<span className="text-2xl md:text-4xl align-baseline">亿</span></p>
+            <p className="text-green-400 text-sm">↑ 增长 9% YoY</p>
+            <FaChartLine className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 归母净利润 */}
+        <motion.div
+            className="grid-item md:col-span-1"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+        >
+            <h3 className="text-lg font-semibold mb-2">归母净利润 <span className="text-xs text-gray-400 block">Net Profit</span></h3>
+            {/* highlight-number 和 opacity-gradient 需要自定义 CSS */}
+            <p className="highlight-number opacity-gradient">211<span className="text-2xl md:text-4xl align-baseline">亿</span></p>
+            <p className="text-green-400 text-sm">↑ 增长 5.38% YoY</p>
+            <FaSackDollar className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 矿产铜产量 */}
+        <motion.div
+            className="grid-item md:col-span-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+        >
+            <h3 className="text-xl font-bold mb-2">矿产铜产量 <span className="text-xs text-gray-400 block">Copper Production</span></h3>
+            <div className="flex items-baseline mb-2">
+                {/* highlight-number 和 opacity-gradient 需要自定义 CSS */}
+                <p className="highlight-number opacity-gradient mr-2">101</p>
+                <span className="text-2xl text-gray-300">万吨 / <span className="text-tesla-red">2023</span></span>
+            </div>
+            <p className="text-green-400 text-sm mb-1">↑ 增长 11% YoY</p>
+            <p className="text-gray-400 text-sm">2024 计划 / Plan: <span className="text-white font-semibold">111 万吨</span></p>
+            <FaCube className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 矿产金产量 */}
+        <motion.div
+            className="grid-item md:col-span-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+        >
+            <h3 className="text-xl font-bold mb-2">矿产金产量 <span className="text-xs text-gray-400 block">Gold Production</span></h3>
+            <div className="flex items-baseline mb-2">
+                 {/* highlight-number 和 opacity-gradient 需要自定义 CSS */}
+                <p className="highlight-number opacity-gradient mr-2">68</p>
+                <span className="text-2xl text-gray-300">吨 / <span className="text-tesla-red">2023</span></span>
+            </div>
+            <p className="text-green-400 text-sm mb-1">↑ 增长 20% YoY</p>
+            <p className="text-gray-400 text-sm">2024 计划 / Plan: <span className="text-white font-semibold">73.5 吨</span></p>
+            <FaCoins className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 资源量概览 */}
+        <motion.div
+            className="grid-item md:col-span-2 md:row-span-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+        >
+            <h3 className="text-xl font-bold mb-4">资源量概览 <span className="text-xs text-gray-400 block">Resources Overview (2023)</span></h3>
+            <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                    <span className="text-gray-300">铜 / Copper</span>
+                    <span className="text-tesla-red font-semibold text-lg">~7,500 万吨</span>
+                </div>
+                <hr className="border-gray-700"/>
+                <div className="flex justify-between items-center">
+                    <span className="text-gray-300">金 / Gold</span>
+                    <span className="text-tesla-red font-semibold text-lg">~3,000 吨</span>
+                </div>
+                <hr className="border-gray-700"/>
+                <div className="flex justify-between items-center">
+                    <span className="text-gray-300">锂 / Lithium (LCE)</span>
+                    <span className="text-tesla-red font-semibold text-lg">>1,300 万吨</span>
+                </div>
+                <hr className="border-gray-700"/>
+                <div className="flex justify-between items-center">
+                    <span className="text-gray-300">锌(铅) / Zinc(Lead)</span>
+                    <span className="text-tesla-red font-semibold text-lg">>1,000 万吨</span>
+                </div>
+                <hr className="border-gray-700"/>
+                <div className="flex justify-between items-center">
+                    <span className="text-gray-300">银 / Silver</span>
+                    <span className="text-tesla-red font-semibold text-lg">~1.5 万吨</span>
+                </div>
+            </div>
+            {/* 装饰性 SVG - stroke 需要 CSS 变量 (--tesla-red) 或直接颜色值 */}
+            <svg viewBox="0 0 100 50" className="w-full h-auto mt-4 opacity-50" aria-hidden="true">
+                <path d="M 0 40 Q 25 10, 50 30 T 100 20" stroke="var(--tesla-red)" strokeWidth="1" fill="none"/>
+            </svg>
+        </motion.div>
+
+        {/* 温室气体排放强度 */}
+        <motion.div
+            className="grid-item md:col-span-1"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+        >
+            <h3 className="text-lg font-semibold mb-2">温室气体排放强度 <span className="text-xs text-gray-400 block">GHG Emission Intensity</span></h3>
+            {/* opacity-gradient 需要自定义 CSS */}
+            <p className="text-3xl font-bold text-tesla-red opacity-gradient">1.53</p>
+            <p className="text-gray-400 text-xs mb-2">tCO₂e / 万元工业增加值</p>
+            <p className="text-green-400 text-sm">↓ 下降 1% YoY</p>
+            <FaLeaf className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 水循环利用率 */}
+        <motion.div
+            className="grid-item md:col-span-1"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+        >
+            <h3 className="text-lg font-semibold mb-2">水循环利用率 <span className="text-xs text-gray-400 block">Water Recycling Rate</span></h3>
+             {/* opacity-gradient 需要自定义 CSS */}
+            <p className="text-3xl font-bold text-tesla-red opacity-gradient">94.8%</p>
+            <p className="text-green-400 text-sm">↑ 提升 0.51 pp YoY</p>
+            <FaRecycle className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 全球布局 */}
+        <motion.div
+            className="grid-item md:col-span-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+        >
+            <h3 className="text-xl font-bold mb-3">全球布局 <span className="text-xs text-gray-400 block">Global Presence</span></h3>
+            <div className="flex justify-around text-center">
+                <div>
+                    <p className="text-2xl font-bold text-tesla-red">16</p>
+                    <p className="text-xs text-gray-400">国家 / Countries</p>
+                </div>
+                <div>
+                    <p className="text-2xl font-bold text-tesla-red">55k+</p>
+                    <p className="text-xs text-gray-400">员工 / Employees</p>
+                </div>
+                <div>
+                    <p className="text-2xl font-bold text-tesla-red">30k+</p>
+                    <p className="text-xs text-gray-400">协作者 / Collaborators</p>
+                </div>
+            </div>
+            <FaGlobe className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+        {/* 锂板块 */}
+        <motion.div
+            className="grid-item md:col-span-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+        >
+            <h3 className="text-xl font-bold mb-2">锂板块 <span className="text-xs text-gray-400 block">Lithium Sector</span></h3>
+            <p className="text-gray-300 text-sm mb-2">“两湖两矿” 强劲发展，目标五年内成为全球最重要锂生产商之一。</p>
+            <p className="text-gray-400 text-sm">2023 产量 / Production: <span className="text-white font-semibold">0.29 万吨 LCE</span></p>
+            <p className="text-gray-400 text-sm">2024 计划 / Plan: <span className="text-white font-semibold">2.5 万吨 LCE</span></p>
+            <p className="text-gray-400 text-sm">2025 计划 / Plan: <span className="text-white font-semibold">12 万吨 LCE</span></p>
+            <FaAtom className="icon-large text-tesla-red" aria-hidden="true" />
+        </motion.div>
+
+    </div> {/* End of Bento Grid */}
+</div>
