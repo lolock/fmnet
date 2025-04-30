@@ -1,5 +1,3 @@
-// Make sure this line is completely removed:
-// import { RootLayout } from 'fumadocs-ui/layout'; 
 import Link from 'next/link';
 import { source } from '@/lib/source'; // 导入 source 对象
 import { Card, Cards } from 'fumadocs-ui/components/card'; 
@@ -9,7 +7,11 @@ export default function HomePage() {
   // 使用 source.getPages() 获取所有文档页面
   const latestArticles = source.getPages() // 调用 source 对象的 getPages 方法
     .filter((file: Page) => file.data?.title) // 直接访问 file.data.title
-    .slice(0, 3); // 获取前3篇文章作为示例
+    .slice(0, 4); // 获取前4篇文章作为示例
+
+  // 获取第一个文档页面的 URL
+  const allDocs = source.getPages();
+  const firstDocUrl = allDocs.length > 0 ? allDocs[0].url : '/docs'; // 如果没有文档，则默认为 /docs
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
@@ -43,7 +45,7 @@ export default function HomePage() {
         {/* 保留原有的“开始探索”按钮 */}
         <div className="flex justify-center gap-4 mb-16">
           <Link
-            href="/docs"
+            href={firstDocUrl} // 更新 href 指向第一个文档
             className="px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
           >
             查看所有文档
