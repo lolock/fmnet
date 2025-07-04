@@ -1,15 +1,8 @@
-
 {
   "pages": [
-    "what-gpt-4o-thinks-of-me",
-    "how-to-ask-questions",
-    "Qwen3",
-    "tech-structure",
-    "outline-structure-word-count-ratio",
-    "actionable-improvement",
-    "new-article",
-    "test",
-    "分析框架应用指南",
-    "大纲结构与字数占比"
+    "-- Guides",
+    "guides",
+    "-- Thoughts",
+    "thoughts"
   ]
 }
