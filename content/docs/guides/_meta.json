@@ -1,10 +1,10 @@
 {
-  "pages": {
-    "analysis-framework-guide": "分析框架应用指南",
-    "outline-word-count-ratio": "大纲结构与字数占比",
-    "how-to-ask-questions": "How to Ask Questions",
-    "tech-structure": "Tech Structure",
-    "actionable-improvement": "Actionable Improvement",
-    "outline-structure-word-count-ratio-en": "Outline Structure Word Count Ratio"
-  }
+  "pages": [
+    "analysis-framework-guide",
+    "how-to-ask-questions",
+    "actionable-improvement",
+    "tech-structure",
+    "outline-word-count-ratio",
+    "outline-structure-word-count-ratio-en"
+  ]
 }
