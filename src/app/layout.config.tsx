@@ -22,22 +22,22 @@ export const baseOptions: BaseLayoutProps = {
         fmnet
       </>
     ),
-    links: [
-      {
-        text: 'Guides',
-        url: '/docs/guides',
-        active: 'nested-url',
-      },
-      {
-        text: 'Thoughts',
-        url: '/docs/thoughts',
-        active: 'nested-url',
-      },
-      {
-        text: 'Troubleshooting',
-        url: '/docs/troubleshooting',
-        active: 'nested-url',
-      },
-    ],
   },
+  links: [
+    {
+      text: 'Guides',
+      url: '/docs/guides',
+      active: 'nested-url',
+    },
+    {
+      text: 'Thoughts',
+      url: '/docs/thoughts',
+      active: 'nested-url',
+    },
+    {
+      text: 'Troubleshooting',
+      url: '/docs/troubleshooting',
+      active: 'nested-url',
+    },
+  ],
 };
